@@ -1,66 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <% include ../partials/header.ejs %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>啾咪商店</title>
+    
+    <style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.banner{
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    font-size: 30px;
+ color: white;
+    background: linear-gradient(115deg,rgb(55, 180, 103) ,rgb(0, 183, 255));
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    /* position: fixed;
+    z-index: 100; */
+}
+.banner .title{
+   width: 30%;
+  color: black;
+
+}
+.banner #LogIn{
+   width: 55%;
+  color: black;
+
+
+}
+.banner #Car{
+   width: 55%;
+  color: black;
+
+
+}
+.container{
+  width: 1080px;
+  height: 100%;
+  margin: auto;
+ }
+.wrap1 , .wrap2{
+      display: flex;          
+}
+
+ .wrap1 .item {
+ height: 100%;
+ margin: 10px;
+ text-align: center;
+  }
+  .wrap2 .item {
+ height: 100%;
+ margin: 10px;
+ text-align: center;
+ width: 25%;
+  }
+
+.item img{
+    width: 100%;
+    height: 400px;
+}
+.item{
+    position: relative;
+}
+.hot{
+    position: absolute;
+   top: 0;
+   left: 0;
+      background-color: red;
+    font-size: 24px;
+}
+.dm{
+    width: 400px;
+    height: 400px;
+    background-color: grey;
+    position: fixed;
+    opacity: 0.9;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+        margin: auto;
+}
+.dm-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 90%;
+    background-color:rgb(43, 128, 226);
+    font-size: 24px;
+    color: white;
+    text-align: center;                                                                                                                                                               
+    
+}
+nav{
+    width: 100%;
+    margin: auto;
+}
+    </style>
 </head>
-
 <body>
-
-  <% include ../partials/nav.ejs %>
-
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started on Heroku with Node.js</h1>
-    <p>This is a sample Node application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
+    <div class="banner">
+        <div class="title">
+            <h2>啾咪商店鋪</h2>
+        </div>
+        <p id="LogIn">登入</p>
+        <p id="Car">購物車</p>
+    </div>
 <div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started on Heroku with Node.js</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/main/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started on Heroku with Node.js</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
+    <div class="wrap1">
+<div class="item "><img src="/pic/cat1.jpg" alt="">
+    <h2>商品名稱:貓碗咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
 </div>
-
-
+<div class="item"><img src="/pic/cat2.jpg" alt="">
+    <h2>商品名稱:睡臉咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+    <div class="hot">熱賣</div>
+</div>
+<div class="item"><img src="/pic/cat3.jpg" alt="">
+    <h2>商品名稱:太空咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+</div>
+</div>
+<div class="wrap2">
+<div class="item"><img src="/pic/cat4.jpg" alt="">
+    <h2>商品名稱:包包咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+</div>
+<div class="item">
+   <img src="/pic/cat5.jpg" alt="">
+    <h2>商品名稱:帥氣咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+    <div class="hot">熱賣</div>
+</div>
+<div class="item"><img src="/pic/cat6.jpg" alt="">
+    <h2>商品名稱:嬌羞咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+</div>
+<div class="item"><img src="/pic/cat7.jpg" alt="">
+    <h2>商品名稱:貴妃咪</h2>
+    <p>定價:10000
+        <br>
+        特價:999
+    </p>
+</div>
+</div>    
+</div>
+<div class="dm" id="dm">
+    <div class="dm-close" id="dm-close">
+    <p>X</p>
+    </div>
+</div>
+<script type="text/javascript">
+document.getElementById("dm-close").onclick=function(){
+  document.getElementById("dm").style.display="none";
+    }
+    </script>
+    
 </body>
 </html>
